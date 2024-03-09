@@ -1,0 +1,47 @@
+---
+const experience = [
+  {
+    title: "Desarrollador Front-End",
+    company: "Silvera Enterprises - Jornada completa",
+    date: "Enero 2024 - Marzo 2024",
+    description:
+      "Encargado del desarrollo de paginas web mediante Custom templates de WordPress, utilizando HTML, CSS, JavaScript y PHP.",
+  },
+  {
+    title: "Desarrolador Full-stack",
+    company: "Inversiones la estrella trayvaleca - contrato de practica",
+    date: "Junio 2023 - Noviembre 2023",
+    description:
+      "Desarrollo de una aplicacion web para la gestion de inventario y ventas, utilizando HTML, CSS, JavaScript, express, react y mongoDB.",
+  },
+];
+---
+
+<section class="min-h-screen bg-slate-900">
+  <div class="container py-16 m-auto">
+    <h1 class="text-4xl text-center w-full font-bold text-zinc-200 mb-8">
+      Experiencia
+    </h1>
+    <div class="px-4">
+      <ol class="relative border-s border-gray-200 dark:border-gray-700">
+        {
+          experience.map((job, index) => (
+            <li class="mb-10 ms-4">
+              <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700" />
+              <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                {job.date}
+              </time>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                {job.title}
+              </h3>
+              <div class="flex flex-row justify-center items-center"></div>
+              <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+                {job.description}
+              </p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </div>
+</section>

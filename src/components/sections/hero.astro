@@ -1,0 +1,28 @@
+---
+import WaveBottom from "../dividers/WaveBottom.astro";
+import GitHub from "../icons/GitHub.astro";
+import LinkedIn from "../icons/LinkedIn.astro";
+import Pills from "../Pills.astro";
+---
+
+<main class="min-h-screen bg-slate-800">
+  <div class="container mx-auto">
+    <div class="flex flex-col justify-center items-center h-screen px-5">
+      <div class="flex flex-col gap-3 text-center">
+        <h1 class="text-4xl font-semibold text-center text-zinc-200">
+          Armando Diaz
+        </h1>
+        <p class="text-2xl font-medium text-center text-zinc-300">
+          Desarrollador Full Stack, capacitado para trabajar en proyectos de
+          desarrollo web y móvil.
+        </p>
+        <div class="flex mt-5 justify-center flex-row flex-wrap gap-3">
+          <Pills label="GitHub" Icon={GitHub} />
+          <Pills label="LinkedIn" Icon={LinkedIn} />
+          <Pills label="Mail" Icon={GitHub} />
+        </div>
+      </div>
+    </div>
+    <WaveBottom />
+  </div>
+</main>
