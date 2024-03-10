@@ -1,28 +1,71 @@
 ---
+import Bootstrap from "../icons/Bootstrap.astro";
+import CSS3 from "../icons/CSS3.astro";
+import Express from "../icons/Express.astro";
+import HTML5 from "../icons/HTML5.astro";
+import Javascript from "../icons/Javascript.astro";
+import React from "../icons/React.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import PHP from "../icons/PHP.astro";
+import PostgreSQL from "../icons/PostgreSQL.astro";
+import Wordpress from "../icons/Wordpress.astro";
+import PillTechnology from "../PillTechnology.astro";
+
 const experience = [
   {
     title: "Desarrollador Front-End",
     company: "Silvera Enterprises - Jornada completa",
+    companyLink: "https://www.silveraenterprises.com/",
     date: "Enero 2024 - Marzo 2024",
     description:
-      "Encargado del desarrollo de paginas web mediante Custom templates de WordPress, utilizando HTML, CSS, JavaScript y PHP.",
+      "Encargado del desarrollo de paginas web mediante Custom templates de WordPress para clientes de la empresa permitiendo la personalizacion de los sitios web segun las necesidades del cliente.",
+    aptitudes: [
+      { label: "HTML", color: "orange", icon: HTML5 },
+      { label: "CSS", color: "blue", icon: CSS3 },
+      { label: "JavaScript", color: "yellow", icon: Javascript },
+      { label: "Bootstrap", color: "purple", icon: Bootstrap },
+      { label: "WordPress", color: "white", icon: Wordpress },
+      { label: "PHP", color: "purple", icon: PHP },
+    ],
   },
   {
     title: "Desarrolador Full-stack",
     company: "Inversiones la estrella trayvaleca - contrato de practica",
+    companyLink: "",
     date: "Junio 2023 - Noviembre 2023",
     description:
-      "Desarrollo de una aplicacion web para la gestion de inventario y ventas, utilizando HTML, CSS, JavaScript, express, react y mongoDB.",
+      "Desarrollo de una aplicacion web para la gestion de inventario y ventas de la empresa, permitiendo el control de los productos y ventas de la empresa, ademas de la generacion de reportes de ventas y productos mas vendidos.",
+    aptitudes: [
+      { label: "HTML", color: "orange", icon: HTML5 },
+      { label: "CSS", color: "blue", icon: CSS3 },
+      { label: "JavaScript", color: "yellow", icon: Javascript },
+      { label: "Express", color: "green", icon: Express },
+      { label: "React", color: "cyan", icon: React },
+      { label: "PostgreSQL", color: "white", icon: PostgreSQL },
+      { label: "Tailwind", color: "cyan", icon: Tailwind },
+    ],
   },
 ];
 ---
 
-<section class="min-h-screen bg-slate-900">
-  <div class="container py-16 m-auto">
-    <h1 class="text-4xl text-center w-full font-bold text-zinc-200 mb-8">
-      Experiencia
-    </h1>
-    <div class="px-4">
+<section class="min-h-screen py-16 bg-">
+  <div class="container gap-4 max-w-[700px] flex flex-col gap-8m-auto">
+    <h2 class="flex flex-row flex-nowrap items-center">
+      <span class="flex-grow block border-t border-slate-800"></span>
+      <span
+        class="flex-none block mx-4 px-10 py-3 text-3xl rounded leading-none font-medium bg-slate-800 text-white"
+      >
+        Experiencia
+      </span>
+      <span class="flex-grow block border-t border-slate-800"></span>
+    </h2>
+    <p class="text-lg text-center px-4 font-normal text-gray-300">
+      A lo largo de mi carrera profesional he tenido la oportunidad de trabajar
+      en diferentes proyectos, tanto en el desarrollo de aplicaciones web como
+      en el desarrollo de paginas web, a continuacion algunos de los proyectos
+      en los que he trabajado.
+    </p>
+    <div class="px-4 mt-8">
       <ol class="relative border-s border-gray-200 dark:border-gray-700">
         {
           experience.map((job, index) => (
@@ -34,10 +77,32 @@ const experience = [
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
                 {job.title}
               </h3>
-              <div class="flex flex-row justify-center items-center"></div>
-              <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">
+              {job.companyLink ? (
+                <a
+                  href={job.companyLink}
+                  target="_blank"
+                  class="text-base font-normal text-blue-500 dark:text-blue-400 transition hover:text-blue-600"
+                >
+                  {job.company}
+                </a>
+              ) : (
+                <p class="text-base font-normal text-blue-500 dark:text-blue-400">
+                  {job.company}
+                </p>
+              )}
+              <p class="mb-4 mt-2 text-base font-normal text-gray-300">
                 {job.description}
               </p>
+              <div class="flex flex-row flex-wrap gap-3 justify-start items-center">
+                {job.aptitudes?.map((aptitude, index) => (
+                  <PillTechnology
+                    key={index}
+                    color={aptitude.color}
+                    Icon={aptitude.icon}
+                    label={aptitude.label}
+                  />
+                ))}
+              </div>
             </li>
           ))
         }
