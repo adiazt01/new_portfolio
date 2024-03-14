@@ -1,0 +1,17 @@
+---
+const { color, Icon } = Astro.props;
+
+const colorClasses = {
+  cyan: "bg-cyan-700",
+  orange: "bg-orange-700",
+  pink: "bg-pink-700",
+  blue: "bg-blue-700",
+  green: "bg-green-700",
+};
+
+const classes = `flex rounded-full shadow-lg px-2 py-2 text-white bg-opacity-100 ${colorClasses[color]}`;
+---
+
+<div class={classes}>
+  <Icon name="check" class="text-xl" color={"white"} />
+</div>

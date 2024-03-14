@@ -1,0 +1,94 @@
+---
+import HTML5 from "../icons/HTML5.astro";
+import React from "../icons/React.astro";
+import CSS from "../icons/CSS3.astro";
+import PillRoundedTechnology from "../PillRoundedTechnology.astro";
+
+const activitys = [
+  {
+    title: "Pomodoro",
+    aptitudes: [
+      {
+        icon: React,
+        color: "cyan",
+      },
+      {
+        icon: HTML5,
+        color: "orange",
+      },
+    ],
+    url: "https://res.cloudinary.com/dboafhu5k/image/upload/v1633660733/Portfolio/Desarrollo_Web_1.0",
+    img: "https://via.placeholder.com/300x200",
+  },
+  {
+    title: "Visualizador de mapa de calor",
+    aptitudes: [
+      {
+        icon: React,
+        color: "cyan",
+      },
+      {
+        icon: HTML5,
+        color: "orange",
+      },
+    ],
+    url: "https://res.cloudinary.com/dboafhu5k/image/upload/v1633660733/Portfolio/Desarrollo_Web_1.0",
+    img: "https://via.placeholder.com/300x200",
+  },
+];
+---
+
+<section class="min-h-screen py-16">
+  <div class="max-w-[800px] m-auto px-8 flex gap-8 flex-col">
+    <h2 class="flex text-center flex-row flex-nowrap items-center">
+      <span class="flex-grow block border-t border-slate-800"></span>
+      <span
+        class="flex-auto text-wrap block mx-4 px-10 py-3 text-3xl rounded leading-none font-medium bg-slate-800 text-white"
+      >
+        Proyectos de Certificación
+      </span>
+      <span class="flex-grow block border-t border-slate-800"></span>
+    </h2>
+    <p class="text-lg text-center px-4 font-normal text-gray-300">
+      Estos son algunos de los proyectos que he realizado para obtener tanto
+      experiencia como el certicados que avalen mis conocimientos.
+    </p>
+    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mt-8">
+      {
+        activitys.map((activity) => (
+          <article class="group overflow-hidden p-2 flex relative h-44 flex-col gap-2">
+            <img
+              src={activity.img}
+              alt={activity.title}
+              class="w-full h-full -z-10 group-hover:scale-125 absolute top-0 left-0 object-cover transition-transform duration-500 ease-in-out"
+            />
+            <div class="absolute top-0 left-0 w-full h-full group-hover:bg-black duration-500 opacity-50 z-10 transition-colors" />
+            <div class="flex text-center gap-2 relative flex-col items-center justify-center w-full h-full z-20">
+              <h3 class="absolute -top-12 left-0 right-0 group-hover:top-1/3 transition-all transform -translate-y-1/2 duration-500  overflow-y-auto text-xl text-white font-semibold max-h-20">
+                {activity.title}
+              </h3>
+              <ul class="absolute -bottom-12 left-0 right-0 flex flex-row justify-center flex-wrap group-hover:bottom-14 transition-all duration-500 transform gap-4 translate-y-1/3">
+                {activity.aptitudes.map((aptitude) => (
+                  <li class="flex items-center justify-center">
+                    <PillRoundedTechnology
+                      color={aptitude.color}
+                      Icon={aptitude.icon}
+                    />
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={activity.url}
+                class="absolute px-3 w-28 rounded-md bg-slate-800 hover:bg-slate-700 hover:scale-110 m-auto py-1
+                 -bottom-12 left-0 right-0 group-hover:bottom-2 transition-all font-bold text-white duration-500 transform translate-y-1/4"
+                target="_blank"
+              >
+                Demo
+              </a>
+            </div>
+          </article>
+        ))
+      }
+    </ul>
+  </div>
+</section>

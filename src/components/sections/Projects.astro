@@ -1,102 +1,48 @@
 ---
 import React from "../icons/React.astro";
+import PillTechnology from "../PillTechnology.astro";
+import MongoDB from "../icons/MongoDB.astro";
+import Tailwind from "../icons/Tailwind.astro";
+import HTML5 from "../icons/HTML5.astro";
+import CSS3 from "../icons/CSS3.astro";
+import Express from "../icons/Express.astro";
+import Javascript from "../icons/Javascript.astro";
 
 const projects = [
   {
-    title: "Proyecto 1",
-    description: "Descripción del proyecto 1",
+    title: "Blog app",
+    description:
+      "Mi aplicacion web de blog personal en el cual escribo sobre tecnologia y desarrollo web. Este proyecto me ayudo a aprender sobre el desarrollo de aplicaciones fullstack. cada articulo es escrito en markdown y se renderiza en la aplicacion con react usando como base de datos mongodb.",
     image: "https://via.placeholder.com/300x200",
-    url: "#",
-    github: "#",
+    url: "https://blog-frontend-h0be.onrender.com/",
+    github: "https://github.com/adiazt01/blog-frontend",
     technology: [
+      {
+        label: "HTML",
+        color: "orange",
+        icon: HTML5,
+      },
+      { label: "JavaScript", color: "yellow", icon: Javascript },
       {
         label: "React",
         color: "cyan",
         icon: React,
       },
-    ],
-  },
-  {
-    title: "Proyecto 2",
-    description: "Descripción del proyecto 2",
-    image: "https://via.placeholder.com/300x200",
-    url: "#",
-    github: "#",
-    technology: [
       {
-        label: "React",
-        color: "cyan",
-        icon: React,
+        label: "CSS",
+        color: "blue",
+        icon: CSS3,
       },
-    ],
-  },
-  {
-    title: "Proyecto 3",
-    description: "Descripción del proyecto 3",
-    image: "https://via.placeholder.com/300x200",
-    url: "#",
-    github: "#",
-    technology: [
       {
-        label: "React",
+        label: "Tailwind",
         color: "cyan",
-        icon: React,
+        icon: Tailwind,
       },
-    ],
-  },
-  {
-    title: "Proyecto 4",
-    description: "Descripción del proyecto 4",
-    image: "https://via.placeholder.com/300x200",
-    url: "#",
-    github: "#",
-    technology: [
+      { label: "MongoDB", color: "green", icon: MongoDB },
       {
-        label: "React",
-        color: "cyan",
-        icon: React,
-      },
-    ],
-  },
-  {
-    title: "Proyecto 5",
-    description: "Descripción del proyecto 5",
-    image: "https://via.placeholder.com/300x200",
-    url: "#",
-    github: "#",
-    technology: [
-      {
-        label: "React",
-        color: "cyan",
-        icon: React,
-      },
-    ],
-  },
-  {
-    title: "Proyecto 6",
-    description: "Descripción del proyecto 6",
-    image: "https://via.placeholder.com/300x200",
-    url: "#",
-    github: "#",
-    technology: [
-      {
-        label: "React",
-        color: "cyan",
-        icon: React,
-      },
-    ],
-  },
-  {
-    title: "Proyecto 7",
-    description: "Descripción del proyecto 7",
-    image: "https://via.placeholder.com/300x200",
-    url: "#",
-    github: "#",
-    technology: [
-      {
-        label: "React",
-        color: "cyan",
-        icon: React,
+        label: "Express",
+        color: "green",
+        icon: Express,
       },
     ],
   },
@@ -106,7 +52,7 @@ const projects = [
 <section
   class="min-h-screen py-16 flex relative flex-col justify-start items-center"
 >
-  <div class="container flex gap-8 flex-col">
+  <div class="max-w-[800px] m-auto px-8 flex gap-8 flex-col">
     <h2 class="flex flex-row flex-nowrap items-center">
       <span class="flex-grow block border-t border-slate-800"></span>
       <span
@@ -120,52 +66,50 @@ const projects = [
       Conoce algunos de los proyectos que he realizado durante mi carrera
       profesional.
     </p>
-    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
-      {projects.map((project, index) => (
-        <li
-          class="flex flex-col bg-slate-800 rounded-lg overflow-hidden"
-        >
-          <img
-            src={project.image}
-            alt={project.title}
-            class="w-full h-48 object-cover object-center"
-          />
-          <div class="p-6">
-            <h3 class="text-xl font-medium text-white mb-3">
-              {project.title}
-            </h3>
-            <p class="text-gray-300 text-sm mb-4">
-              {project.description}
-            </p>
-            <div class="flex flex-row flex-wrap gap-2">
-              {project.technology.map((tech, index) => (
-                <span
-                  class={`flex items-center px-2 py-1 rounded-full text-xs font-medium bg-${tech.color}-600 text-white`}
+    <ul class="grid grid-cols-1 gap-8 mt-8">
+      {
+        projects.map((project) => (
+          <li>
+            <article class="flex flex-col">
+              <header>
+                <h4 class="text-2xl font-semibold text-zinc-100">
+                  {project.title}
+                </h4>
+              </header>
+              <div class="text-xl text-zinc-200">{project.description}</div>
+              <ul class="flex flex-wrap gap-4 mt-4">
+                {project.technology.map((tech) => (
+                  <li>
+                    <PillTechnology
+                      label={tech.label}
+                      color={tech.color}
+                      Icon={tech.icon}
+                    />
+                  </li>
+                ))}
+              </ul>
+              <div class="mt-8">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  class="w-full m-auto max-w-[800px] h-auto"
+                />
+              </div>
+              <footer class="flex mt-4 gap-2 flex-row w-full justify-end">
+                <a
+                  href={project.github}
+                  class="ml-4 text-cyan-500 hover:text-cyan-400"
                 >
-                  {tech.icon && (
-                    <tech.icon class="w-4 h-4 mr-1" />
-                  )}
-                  {tech.label}
-                </span>
-              ))}
-            </div>
-            <div class="flex flex-row gap-4 mt-4">
-              <a
-                href={project.url}
-                class="flex items-center px-4 py-2 rounded-md bg-cyan-600 text-white font-medium"
-              >
-                Ver proyecto
-              </a>
-              <a
-                href={project.github}
-                class="flex items-center px-4 py-2 rounded-md bg-gray-800 text-white font-medium"
-              >
-                Ver código
-              </a>
-            </div>
-          </div>
-        </li>
-      ))}
+                  Ver código
+                </a>
+                <a href={project.url} class="text-cyan-500 hover:text-cyan-400">
+                  Ver proyecto
+                </a>
+              </footer>
+            </article>
+          </li>
+        ))
+      }
     </ul>
   </div>
 </section>

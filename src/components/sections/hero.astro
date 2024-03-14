@@ -4,6 +4,7 @@ import LinkedIn from "../icons/LinkedIn.astro";
 import Pills from "../Pills.astro";
 import Mail from "../icons/Mail.astro";
 ---
+
 <client:load>
   <script>
     document
@@ -22,7 +23,6 @@ import Mail from "../icons/Mail.astro";
 
     const pdf = pdfContainer.querySelector("embed");
 
- 
     pdfContainer.addEventListener("click", function () {
       pdfContainer.style.display = "none";
     });
@@ -34,31 +34,31 @@ import Mail from "../icons/Mail.astro";
 </client:load>
 
 <main class="min-h-screen bg-zinc-900">
-  <div class="container mx-auto">
-    <div class="flex flex-col justify-center items-center h-screen px-5">
-      <div class="flex flex-col gap-3 text-center">
-        <h1 class="text-3xl text-violet-300 font-semibold text-center">
-          Armando Diaz
-        </h1>
-        <p class="text-xl font-medium text-center text-zinc-300">
-          <strong class="text-violet-200">Desarrollador Full Stack</strong>, con
-          amplias habilidades y adaptacion en el desarrollo de
-          <strong class="text-violet-200"> aplicaciones web</strong>.
-        </p>
-        <div class="flex mt-5 justify-center flex-row flex-wrap gap-3">
-          <Pills label="GitHub" Icon={GitHub} color="black" />
-          <Pills label="LinkedIn" Icon={LinkedIn} color="cyan" />
-          <Pills label="armandodt2004@gmail.com" Icon={Mail} color="purple" />
-        </div>
-        <div class="flex mt-5 justify-center flex-row">
-          <a
-            href="/curriculum.pdf"
-            target="_blank"
-            class="bg-violet-400 text-zinc-800 font-bold py-2 px-4 hover:bg-violet-300 transition duration-300"
-          >
-            Descargar curriculum
-          </a>
-        </div>
+  <div
+    class="flex max-w-[800px] px-8 m-auto flex-col justify-center items-center h-screen"
+  >
+    <div class="flex flex-col gap-3 text-center">
+      <h1 class="text-3xl text-violet-300 font-semibold text-center">
+        Armando Diaz
+      </h1>
+      <p class="text-xl font-medium text-center text-zinc-300">
+        <strong class="text-violet-200">Desarrollador Full Stack</strong>, con
+        amplias habilidades y adaptacion en el desarrollo de
+        <strong class="text-violet-200"> aplicaciones web</strong>.
+      </p>
+      <div class="flex mt-5 justify-center flex-row flex-wrap gap-3">
+        <Pills label="GitHub" Icon={GitHub} color="black" />
+        <Pills label="LinkedIn" Icon={LinkedIn} color="cyan" />
+        <Pills label="armandodt2004@gmail.com" Icon={Mail} color="purple" />
+      </div>
+      <div class="flex mt-5 justify-center flex-row">
+        <a
+          href="/curriculum.pdf"
+          target="_blank"
+          class="bg-violet-400 text-zinc-800 font-bold py-2 px-4 hover:bg-violet-300 transition duration-300"
+        >
+          Descargar curriculum
+        </a>
       </div>
     </div>
   </div>
