@@ -5,59 +5,47 @@ import Pills from "../Pills.astro";
 import Mail from "../icons/Mail.astro";
 ---
 
-<client:load>
-  <script>
-    document
-      .getElementById("openPdfButton")
-      .addEventListener("click", function () {
-        document.getElementById("pdfContainer").style.display = "block";
-      });
-
-    document
-      .getElementById("closePdfButton")
-      .addEventListener("click", function () {
-        document.getElementById("pdfContainer").style.display = "none";
-      });
-
-    const pdfContainer = document.getElementById("pdfContainer");
-
-    const pdf = pdfContainer.querySelector("embed");
-
-    pdfContainer.addEventListener("click", function () {
-      pdfContainer.style.display = "none";
-    });
-
-    pdf.addEventListener("click", function (event) {
-      event.stopPropagation();
-    });
-  </script>
-</client:load>
-
 <main class="min-h-screen bg-zinc-900">
   <div
     class="flex max-w-[800px] px-8 m-auto flex-col justify-center items-center h-screen"
   >
     <div class="flex flex-col gap-3 text-center">
-      <h1 class="text-3xl text-violet-300 font-semibold text-center">
+      <h1 class="text-4xl text-emerald-400 font-bold text-center">
         Armando Diaz
       </h1>
-      <p class="text-xl font-medium text-center text-zinc-300">
-        <strong class="text-violet-200">Desarrollador Full Stack</strong>, con
+      <p class="text-xl font-medium text-center text-zinc-200">
+        <strong class="text-violet-300">Desarrollador Full Stack</strong>, con
         amplias habilidades y adaptacion en el desarrollo de
-        <strong class="text-violet-200"> aplicaciones web</strong>.
+        <strong class="text-violet-300"> aplicaciones web</strong>.
       </p>
       <div class="flex mt-5 justify-center flex-row flex-wrap gap-3">
-        <Pills label="GitHub" Icon={GitHub} color="black" />
-        <Pills label="LinkedIn" Icon={LinkedIn} color="cyan" />
-        <Pills label="armandodt2004@gmail.com" Icon={Mail} color="purple" />
+        <Pills
+          link="https://github.com/adiazt01"
+          label="GitHub"
+          Icon={GitHub}
+          color="black"
+        />
+        <Pills
+          link="https://www.linkedin.com/"
+          label="LinkedIn"
+          Icon={LinkedIn}
+          color="cyan"
+        />
+        <Pills
+          link="mailto:armandodt2004@gmail.com"
+          label="armandodt2004@gmail.com"
+          Icon={Mail}
+          color="purple"
+        />
       </div>
       <div class="flex mt-5 justify-center flex-row">
         <a
           href="/curriculum.pdf"
           target="_blank"
-          class="bg-violet-400 text-zinc-800 font-bold py-2 px-4 hover:bg-violet-300 transition duration-300"
+          class="bg-violet-500 text-white font-bold py-2 px-4 hover:bg-violet-400 transition-colors duration-300 ease-in-out rounded-md shadow-md"
         >
           Descargar curriculum
+          <i class="fa-solid fa-download ms-1"></i>
         </a>
       </div>
     </div>

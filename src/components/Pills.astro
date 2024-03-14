@@ -1,5 +1,5 @@
 ---
-const { label, Icon, color } = Astro.props;
+const { label, Icon, color, link, action } = Astro.props;
 
 const colorClasses = {
   cyan: "text-zinc-200 border-cyan-500/50 bg-cyan-800/50",
@@ -9,13 +9,16 @@ const colorClasses = {
 
 const colorClass = colorClasses[color] || "text-gray-500 border-gray-500 bg-gray-500/50";
 
-const classes = `flex px-4 py-1 border-2 rounded-2xl items-center space-x-2 ${colorClass}`;
+const classes = `flex px-4 cursor-pointer py-1 hover:scale-110 transition-transform font-semibold border-2 rounded-2xl items-center space-x-2 ${colorClass}`;
 
 ---
 
-<div
+<a
+  href={link}
+  target="_blank"
   class={classes}
+  onclick={action}
 >
-  <p>{label}</p>
-  <Icon color={`${(color === "black" || color === "cyan") ? "white" : color}`} />
-</div>
+  <span>{label}</span>
+  <Icon color={"white"} />
+</a>
