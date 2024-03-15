@@ -9,7 +9,7 @@ import Tailwind from "../icons/Tailwind.astro";
 import PHP from "../icons/PHP.astro";
 import PostgreSQL from "../icons/PostgreSQL.astro";
 import Wordpress from "../icons/Wordpress.astro";
-import PillTechnology from "../PillTechnology.astro";
+import ExperienceItem from "../ExperienceItem.astro";
 
 const experience = [
   {
@@ -49,60 +49,30 @@ const experience = [
 ---
 
 <section class="min-h-screen py-16">
-  <div class="max-w-[800px] m-auto px-8 gap-4 flex flex-col gap-8m-auto">
+  <div class="max-w-[800px] m-auto px-8 gap-8 flex flex-col gap-8m-auto">
     <h2 class="flex flex-row flex-nowrap items-center">
-      <span class="flex-grow block border-t border-slate-800"></span>
+      <span class="flex-grow block border-t-2 border-emerald-800"></span>
       <span
-        class="flex-none block mx-4 px-10 py-3 text-3xl rounded leading-none font-medium bg-slate-800 text-white"
+        class="flex-none block mx-4 px-10 py-3 text-4xl rounded leading-none font-medium bg-emerald-800 text-white"
       >
         Experiencia
       </span>
-      <span class="flex-grow block border-t border-slate-800"></span>
+      <span class="flex-grow block border-t-2 border-emerald-800"></span>
     </h2>
-    <p class="text-lg text-center px-4 font-normal text-gray-300">
+    <p class="text-lg text-center px-4 font-semibold text-gray-300">
       A lo largo de mi carrera profesional he tenido la oportunidad de trabajar
-      en diferentes proyectos, tanto en el desarrollo de aplicaciones web como
-      en el desarrollo de paginas web, a continuacion algunos de los proyectos
-      en los que he trabajado.
+      en diferentes proyectos, tanto en el desarrollo de <span
+        class="text-fuchsia-300 font-bold">aplicaciones web</span
+      >
+      como en el desarrollo de <span class="text-fuchsia-300">paginas web</span
+      >, a continuación algunos de los proyectos en los que he trabajado.
     </p>
-    <div class="px-4 mt-8">
-      <ol class="relative border-s border-gray-200 dark:border-gray-700">
+    <div class="px-4 mt-4">
+      <ol class="relative border-s border-emerald-700">
         {
-          experience.map((job, index) => (
+          experience.map((job) => (
             <li class="mb-10 ms-4">
-              <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700" />
-              <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-                {job.date}
-              </time>
-              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                {job.title}
-              </h3>
-              {job.companyLink ? (
-                <a
-                  href={job.companyLink}
-                  target="_blank"
-                  class="text-base font-normal text-blue-500 dark:text-blue-400 transition hover:text-blue-600"
-                >
-                  {job.company}
-                </a>
-              ) : (
-                <p class="text-base font-normal text-blue-500 dark:text-blue-400">
-                  {job.company}
-                </p>
-              )}
-              <p class="mb-4 mt-2 text-base font-normal text-gray-300">
-                {job.description}
-              </p>
-              <div class="flex flex-row flex-wrap gap-3 justify-start items-center">
-                {job.aptitudes?.map((aptitude, index) => (
-                  <PillTechnology
-                    key={index}
-                    color={aptitude.color}
-                    Icon={aptitude.icon}
-                    label={aptitude.label}
-                  />
-                ))}
-              </div>
+              <ExperienceItem job={job} />
             </li>
           ))
         }
