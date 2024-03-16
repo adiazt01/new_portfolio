@@ -7,12 +7,15 @@ import HTML5 from "../icons/HTML5.astro";
 import CSS3 from "../icons/CSS3.astro";
 import Express from "../icons/Express.astro";
 import Javascript from "../icons/Javascript.astro";
+import Title from "../Title.astro";
+import Content from "../Content.astro";
+import ProjectCard from "../ProjectCard.astro";
 
 const projects = [
   {
     title: "Blog app",
     description:
-      "Mi aplicacion web de blog personal en el cual escribo sobre tecnologia y desarrollo web. Este proyecto me ayudo a aprender sobre el desarrollo de aplicaciones fullstack. cada articulo es escrito en markdown y se renderiza en la aplicacion con react usando como base de datos mongodb.",
+      "Mi aplicación web de blog personal en el cual escribo sobre tecnología y desarrollo web. Este proyecto me ayudo a aprender sobre el desarrollo de aplicaciones fullstack. cada articulo es escrito en markdown y se renderiza en la aplicación con react usando como base de datos MongoDB.",
     image: "https://via.placeholder.com/300x200",
     url: "https://blog-frontend-h0be.onrender.com/",
     github: "https://github.com/adiazt01/blog-frontend",
@@ -53,60 +56,16 @@ const projects = [
   class="min-h-screen py-16 flex relative flex-col justify-start items-center"
 >
   <div class="max-w-[800px] m-auto px-8 flex gap-8 flex-col">
-    <h2 class="flex flex-row flex-nowrap items-center">
-      <span class="flex-grow block border-t border-slate-800"></span>
-      <span
-        class="flex-none block mx-4 px-10 py-3 text-3xl rounded leading-none font-medium bg-slate-800 text-white"
-      >
-        Proyectos
-      </span>
-      <span class="flex-grow block border-t border-slate-800"></span>
-    </h2>
-    <p class="text-lg text-center px-4 font-normal text-gray-300">
+    <Title>Proyectos</Title>
+    <Content>
       Conoce algunos de los proyectos que he realizado durante mi carrera
       profesional.
-    </p>
+    </Content>
     <ul class="grid grid-cols-1 gap-8 mt-8">
       {
         projects.map((project) => (
           <li>
-            <article class="flex flex-col">
-              <header>
-                <h4 class="text-2xl font-semibold text-zinc-100">
-                  {project.title}
-                </h4>
-              </header>
-              <div class="text-xl text-zinc-200">{project.description}</div>
-              <ul class="flex flex-wrap gap-4 mt-4">
-                {project.technology.map((tech) => (
-                  <li>
-                    <PillTechnology
-                      label={tech.label}
-                      color={tech.color}
-                      Icon={tech.icon}
-                    />
-                  </li>
-                ))}
-              </ul>
-              <div class="mt-8">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  class="w-full m-auto max-w-[800px] h-auto"
-                />
-              </div>
-              <footer class="flex mt-4 gap-2 flex-row w-full justify-end">
-                <a
-                  href={project.github}
-                  class="ml-4 text-cyan-500 hover:text-cyan-400"
-                >
-                  Ver código
-                </a>
-                <a href={project.url} class="text-cyan-500 hover:text-cyan-400">
-                  Ver proyecto
-                </a>
-              </footer>
-            </article>
+           <ProjectCard project={project} />
           </li>
         ))
       }

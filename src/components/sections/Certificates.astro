@@ -1,1 +1,110 @@
-<section 
+---
+import Content from "../Content.astro";
+import ExperienceItem from "../ExperienceItem.astro";
+import Title from "../Title.astro";
+import Bootstrap from "../icons/Bootstrap.astro";
+import CSS3 from "../icons/CSS3.astro";
+import HTML5 from "../icons/HTML5.astro";
+import Javascript from "../icons/Javascript.astro";
+import React from "../icons/React.astro";
+
+
+const experience = [
+  {
+    title: "Data visualization",
+    company: "FreeCodeCamp - Ver Certificado",
+    companyLink:
+      "https://www.freecodecamp.org/certification/fccc117c7bb-b7ee-4660-8ae3-663357be41a0/data-visualization",
+    date: "September 7, 2023",
+    description:
+      "Permitio adquirir conocimientos en Data Visualization with D3, JSON APIs and Ajax, y Data Visualization Projects.",
+    aptitudes: [
+      {
+        label: "JavaScript",
+        icon: Javascript,
+        color: "yellow",
+      },
+    ],
+  },
+  {
+    title: "Front End Libraries",
+    company: "FreeCodeCamp - Ver Certificado",
+    companyLink:
+      "https://www.freecodecamp.org/certification/fccc117c7bb-b7ee-4660-8ae3-663357be41a0/front-end-libraries",
+    date: "Julio 16, 2023",
+    description:
+      "Permitio adquirir conocimientos en Bootstrap, jQuery, Sass, React, y Redux.",
+    aptitudes: [
+      {
+        label: "Bootstrap",
+        icon: Bootstrap,
+        color: "purple",
+      },
+      {
+        label: "React",
+        icon: React,
+        color: "blue",
+      },
+    ],
+  },
+  {
+    title: "JavaScript Algorithms and Data Structures",
+    company: "FreeCodeCamp - Ver Certificado",
+    companyLink:
+      "https://www.freecodecamp.org/certification/fccc117c7bb-b7ee-4660-8ae3-663357be41a0/javascript-algorithms-and-data-structures",
+    date: "Julio 3, 2023",
+    description:
+      "Permitio adquirir conocimientos en JavaScript, ES6, Regular Expressions, Debugging, Data Structures, y Algorithms.",
+    aptitudes: [
+      {
+        label: "JavaScript",
+        icon: Javascript,
+        color: "yellow",
+      },
+    ],
+  },
+  {
+    title: "Responsive Web Design",
+    company: "FreeCodeCamp - Ver Certificado",
+    companyLink:
+      "https://www.freecodecamp.org/certification/fccc117c7bb-b7ee-4660-8ae3-663357be41a0/responsive-web-design",
+    date: "Mayo 6, 2023",
+    description:
+      "Permitio adquirir conocimientos en HTML, CSS, Flexbox, Grid, Responsive Web Design Principles, CSS Flexbox, CSS Grid, Responsive Web Design Projects, y CSS Variables.",
+    aptitudes: [
+      {
+        label: "HTML5",
+        icon: HTML5,
+        color: "orange",
+      },
+      {
+        label: "CSS3",
+        icon: CSS3,
+        color: "blue",
+      },
+    ],
+  },
+];
+---
+
+<section class="min-h-screen py-16">
+  <div class="max-w-[800px] m-auto px-8 flex gap-8 flex-col">
+    <Title>Certificados</Title>
+    <Content>
+      Estos son algunos de los proyectos que he realizado para obtener tanto
+      experiencia como el certificados que avalen mis conocimientos.
+    </Content>
+
+    <div class="px-4 mt-4">
+      <ol class="relative border-s border-emerald-700">
+        {
+          experience.map((job) => (
+            <li class="mb-10 ms-4">
+              <ExperienceItem certificate={true} job={job} />
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </div>
+</section>

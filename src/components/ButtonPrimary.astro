@@ -1,0 +1,13 @@
+---
+const { label, link, icon } = Astro.props;
+
+const classIcon = `${icon} ms-1`;
+---
+
+<a
+  href={link}
+  class="cursor-pointer ml-4 font-semibold hover:scale-105 bg-emerald-600 hover:bg-white text-white hover:text-fuchsia-400 px-5 py-1.5 rounded transition duration-300 ease-in-out hover:shadow-md"
+>
+  {label}
+  <i class={classIcon}></i>
+</a>

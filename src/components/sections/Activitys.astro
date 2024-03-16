@@ -3,25 +3,12 @@ import HTML5 from "../icons/HTML5.astro";
 import React from "../icons/React.astro";
 import CSS from "../icons/CSS3.astro";
 import PillRoundedTechnology from "../PillRoundedTechnology.astro";
+import Title from "../Title.astro";
+import Content from "../Content.astro";
 
 const activitys = [
   {
     title: "Pomodoro",
-    aptitudes: [
-      {
-        icon: React,
-        color: "cyan",
-      },
-      {
-        icon: HTML5,
-        color: "orange",
-      },
-    ],
-    url: "https://res.cloudinary.com/dboafhu5k/image/upload/v1633660733/Portfolio/Desarrollo_Web_1.0",
-    img: "https://via.placeholder.com/300x200",
-  },
-  {
-    title: "Visualizador de mapa de calor",
     aptitudes: [
       {
         icon: React,
@@ -40,20 +27,12 @@ const activitys = [
 
 <section class="min-h-screen py-16">
   <div class="max-w-[800px] m-auto px-8 flex gap-8 flex-col">
-    <h2 class="flex text-center flex-row flex-nowrap items-center">
-      <span class="flex-grow block border-t border-slate-800"></span>
-      <span
-        class="flex-auto text-wrap block mx-4 px-10 py-3 text-3xl rounded leading-none font-medium bg-slate-800 text-white"
-      >
-        Proyectos de Certificación
-      </span>
-      <span class="flex-grow block border-t border-slate-800"></span>
-    </h2>
-    <p class="text-lg text-center px-4 font-normal text-gray-300">
+    <Title>Proyectos de certificación</Title>
+    <Content>
       Estos son algunos de los proyectos que he realizado para obtener tanto
-      experiencia como el certicados que avalen mis conocimientos.
-    </p>
-    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mt-8">
+      experiencia como el certificados que avalen mis conocimientos.
+    </Content>
+    <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-8">
       {
         activitys.map((activity) => (
           <article class="group overflow-hidden p-2 flex relative h-44 flex-col gap-2">
@@ -79,7 +58,7 @@ const activitys = [
               </ul>
               <a
                 href={activity.url}
-                class="absolute px-3 w-28 rounded-md bg-slate-800 hover:bg-slate-700 hover:scale-110 m-auto py-1
+                class="absolute px-3 w-28 rounded-md bg-fuchsia-600 hover:bg-fuchsia-400 hover:scale-105 m-auto py-1
                  -bottom-12 left-0 right-0 group-hover:bottom-2 transition-all font-bold text-white duration-500 transform translate-y-1/4"
                 target="_blank"
               >

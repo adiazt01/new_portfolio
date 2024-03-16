@@ -10,6 +10,8 @@ import PHP from "../icons/PHP.astro";
 import PostgreSQL from "../icons/PostgreSQL.astro";
 import Wordpress from "../icons/Wordpress.astro";
 import ExperienceItem from "../ExperienceItem.astro";
+import Title from "../Title.astro";
+import Content from "../Content.astro";
 
 const experience = [
   {
@@ -50,23 +52,16 @@ const experience = [
 
 <section class="min-h-screen py-16">
   <div class="max-w-[800px] m-auto px-8 gap-8 flex flex-col gap-8m-auto">
-    <h2 class="flex flex-row flex-nowrap items-center">
-      <span class="flex-grow block border-t-2 border-emerald-800"></span>
-      <span
-        class="flex-none block mx-4 px-10 py-3 text-4xl rounded leading-none font-medium bg-emerald-800 text-white"
-      >
-        Experiencia
-      </span>
-      <span class="flex-grow block border-t-2 border-emerald-800"></span>
-    </h2>
-    <p class="text-lg text-center px-4 font-semibold text-gray-300">
+    <Title>Experiencia</Title>
+    <Content>
       A lo largo de mi carrera profesional he tenido la oportunidad de trabajar
       en diferentes proyectos, tanto en el desarrollo de <span
         class="text-fuchsia-300 font-bold">aplicaciones web</span
       >
       como en el desarrollo de <span class="text-fuchsia-300">paginas web</span
       >, a continuación algunos de los proyectos en los que he trabajado.
-    </p>
+    </Content>
+
     <div class="px-4 mt-4">
       <ol class="relative border-s border-emerald-700">
         {

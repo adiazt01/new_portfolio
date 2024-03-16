@@ -1,7 +1,7 @@
 ---
-import PillTechnology from './PillTechnology.astro';
-const { job } = Astro.props;
-const {description, date, company, companyLink} = job;
+import PillTechnology from "./PillTechnology.astro";
+const { job, certificate } = Astro.props;
+const { description, date, company, companyLink } = job;
 ---
 
 <div
@@ -9,6 +9,9 @@ const {description, date, company, companyLink} = job;
 >
 </div>
 <h3 class="text-xl font-semibold text-emerald-300">
+  {certificate ? (
+    <i class="me-1 fa-solid fa-award"></i>
+  ) : <i class="me-1 fa-solid fa-city"></i>}
   {job.title}
 </h3>
 {
