@@ -29,14 +29,16 @@ const { title, description, image, github, url, technology } = project;
     }
   </ul>
   <div class="mt-8">
-    <Image width={300} height={200} src={image} alt={title} class="w-full m-auto max-w-[800px] h-auto" />
+    <Image
+      width={300}
+      height={200}
+      src={image}
+      alt={title}
+      class="w-full m-auto max-w-[800px] h-auto"
+    />
   </div>
   <footer class="flex mt-5 gap-2 flex-row w-full justify-end">
-    <ButtonPrimary
-      url={github}
-      label="Ver código"
-      icon="fab fa-github"
-    />
+    <ButtonPrimary url={github} label="Ver código" icon="fab fa-github" />
     <ButtonPrimary
       url={url}
       label="Ver proyecto"
