@@ -9,14 +9,24 @@ import Mail from "../icons/Mail.astro";
   <div
     class="flex max-w-[800px] px-8 m-auto flex-col justify-center items-center h-screen"
   >
-    <div class="flex flex-col gap-3 text-center">
-      <h1 class="text-3xl text-emerald-400 font-bold text-center">
-        Armando Diaz
-      </h1>
+    <div class="flex gap-3 flex-col text-center">
+      <img
+        src="https://media.licdn.com/dms/image/D4E03AQH4hVvxb-NJHg/profile-displayphoto-shrink_800_800/0/1699820373488?e=1716422400&v=beta&t=aiKOeAv8FXUja6muFh_vTqmUc7fMeMM4ahKt_1S5nEk"
+        alt="Armando Diaz"
+        class="w-44 h-44 rounded-full mx-auto border-4 border-emerald-500"
+      />
+      <div>
+        <h1 class="text-4xl text-white font-bold text-center">
+          Armando Diaz.
+        </h1>
+        <small class="text-xl text-white/50 font-semibold">
+          Construyendo apps y sitios web.
+        </small>
+      </div>
       <p class="text-xl font-medium text-center text-zinc-200">
-        <strong class="text-violet-300">Desarrollador Full Stack</strong>, con
-        amplias habilidades y adaptación en el desarrollo de
-        <strong class="text-violet-300"> aplicaciones web</strong>.
+        Soy desarrollador <strong class="text-emerald-300">full-stack</strong> especializado
+        en construir aplicaciones web ademas de sitios web con tecnologías modernas
+        para que sean rápidas, seguras y accesibles.
       </p>
       <div class="flex mt-5 justify-center flex-row flex-wrap gap-3">
         <Pills
@@ -26,7 +36,7 @@ import Mail from "../icons/Mail.astro";
           color="black"
         />
         <Pills
-          link="https://www.linkedin.com/"
+          link="https://www.linkedin.com/in/armando-diaz-291385251/"
           label="LinkedIn"
           Icon={LinkedIn}
           color="cyan"
@@ -38,11 +48,11 @@ import Mail from "../icons/Mail.astro";
           color="purple"
         />
       </div>
-      <div class="flex mt-5 justify-center flex-row">
+      <div class="flex justify-center flex-row">
         <a
           href="/curriculum.pdf"
           target="_blank"
-          class="bg-amber-600 text-white font-bold py-2 px-4 hover:bg-amber-500 transition-colors duration-300 ease-in-out rounded-md shadow-md"
+          class="bg-amber-600 mt-5 text-white font-bold py-2 px-4 hover:bg-amber-500 transition-colors duration-300 ease-in-out rounded-md shadow-md"
         >
           Descargar curriculum
           <i class="fa-solid fa-download ms-1"></i>
